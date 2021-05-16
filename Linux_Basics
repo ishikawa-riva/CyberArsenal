@@ -113,3 +113,45 @@
 
 # Basic Linux Commands
 
+1.  `man` - Manual Pages
+
+    ![image-20210516071012282](assets.md/image-20210516071012282.png)
+
+    ​	`man -k <pattern>` - To search pattern in `man` pages.
+
+2.  `apropos` - Search for manual pages
+
+3.  `ls` - Listing Files
+
+4.  `cd` - Moving Around (change directory)
+
+5.  `pwd`  - Print Working Directory
+
+6.  `mkdir` - Create Directory
+
+7.  `rmdir` - Remove empty directory
+
+8.  `rm` - Remove Directories and Files
+
+9.  `echo` - Print to terminal
+
+10.  `which` - Find path of file is found under `$PATH`
+
+11.  `locate` - Used to find File and Folders quickly if mapped in `locatedb` 
+
+12.  `find` - Search a file through recursive search
+
+
+
+# Managing Linux Basic Services
+
+### `SSH` service
+
+```bash
+sudo systemctl start ssh				# Starts the SSH service are port 22
+sudo systemctl enable ssh				# Enables SSH service to run on startup
+sudo ss -antlp | grep sshd 				# To check if SSH is running
+```
+
+### `http` service 
+
