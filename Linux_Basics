@@ -1,0 +1,37 @@
+# Linux File System
+
+![https://lcom.static.linuxfound.org/sites/lcom/files/standard-unix-filesystem-hierarchy.png](assets.md/standard-unix-filesystem-hierarchy.png)
+
+
+
+#### `/root`  : Base Directory of all
+
+1.  Every single file and directory starts from the root directory.
+
+2.  Only root user has write privilege under this directory.
+
+#### `/bin`: User Binaries
+
+1.  Contains binary executable.
+2.  Common Linux commands you need to use in single-user modes are located under this directory.
+3.  Commands used by all the users of the system are located here.
+4.  For example:` ps`, `ls`, `ping`, `grep`, `cp`.
+
+#### `/sbin` : System Binaries
+
+1.  Just like `/bin`, `/sbin` also contains binary executable.
+2.  But, the Linux commands located under this directory are used typically by system administrator, for system maintenance purpose.
+3.  For example: `iptables`, `reboot`, `fdisk`, `ifconfig`, `swapon`.
+
+#### `/etc` : Configuration Files
+
+1.  Contains configuration files required by all programs.
+2.  This also contains startup and shutdown shell scripts used to start/stop individual programs.
+3.  For example: `/etc/resolv.conf`, `/etc/logrotate.conf`.
+
+#### `/dev` : Device Files
+
+1.  Contains device files.
+2.  These include terminal devices, USB, or any device attached to the system.
+3.  For example: `/dev/tty1`, `/dev/usbmon0`
+
