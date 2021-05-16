@@ -4,10 +4,14 @@
 
 
 
-#### `/root`  : Base Directory of all
+#### `/`  : 'Root' Base Directory of all
 
 1.  Every single file and directory starts from the root directory.
+2.  Only root user has write privilege under this directory by default.
 
+#### `/root` : Root Home
+
+1.  Home directory for root user.
 2.  Only root user has write privilege under this directory.
 
 #### `/bin`: User Binaries
@@ -34,4 +38,78 @@
 1.  Contains device files.
 2.  These include terminal devices, USB, or any device attached to the system.
 3.  For example: `/dev/tty1`, `/dev/usbmon0`
+
+#### `/proc` : Process Information
+
+1.  Contains information about system process.
+2.  This is a pseudo `filesystem` contains information about running  process. For example: `/proc/{pid}` directory contains information about  the process with that particular `pid`.
+3.  This is a virtual `filesystem` with text information about system resources. For example: `/proc/uptime`
+
+#### `/var `: Variable Files
+
+1.  var stands for variable files.
+2.  Content of the files that are expected to grow can be found under this directory.
+3.  This includes — system log files (`/var/log`); packages and database  files (`/var/lib`); emails (`/var/mail`);  print queues (`/var/spool`); lock  files (`/var/lock`); temp files needed across reboots (`/var/tmp`);
+
+#### `/tmp` : Temporary Files
+
+1.  Directory that contains temporary files created by system and users.
+
+2.  Files under this directory are deleted when system is rebooted.
+
+#### `/usr` : User Programs
+
+1.  Contains binaries, libraries, documentation, and source-code for second level programs.
+
+2.  `/usr/bin` contains binary files for user programs. If you can’t find a user binary under `/bin`, look under `/usr/bin`. For example: `at`, `awk`, `cc`,  `less`, `scp`.
+
+3.  `/usr/sbin` contains binary files for system administrators. If you  can’t find a system binary under `/sbin`, look under `/usr/sbin`. For  example: `atd`, `cron`, `sshd`, `useradd`, `userdel`.
+
+4.  `/usr/lib` contains libraries for `/usr/bin` and `/usr/sbin`
+
+5.  `/usr/local` contains users programs that you install from source. For example, when you install `apache` from source, it goes under  `/usr/local/apache2`.
+
+#### `/home` : Home Directories
+
+1.  Home directories for all users to store their personal files.
+
+2.  For example: `/home/user`, `/home/jake`.
+
+#### `/boot` : Boot Loader Files
+
+1.  Contains boot loader related files.
+2.  Kernel `initrd`, `vmlinux`, `grub` files are located under `/boot`.
+3.  For example: `initrd.img-2.6.32-24-generic`, `vmlinuz-2.6.32-24-generic`.
+
+#### `/lib` : System Libraries
+
+1.  Contains library files that supports the binaries located under `/bin` and `/sbin`
+2.  Library filenames are either` ld*` or `lib*.so.*`
+3.  For example:` ld-2.11.1.so`, `libncurses.so.5.7`.
+
+#### `/opt` :  Optional add-on Applications
+
+1.  opt stands for optional.
+2.  Contains add-on applications from individual vendors.
+3.  add-on applications should be installed under either `/opt/` or `/opt/ sub-directory`.
+
+#### `/mnt` : Mount Directory
+
+1.  Temporary mount directory where `sysadmins` can mount `filesystems`.
+
+#### `/media` : Removable Media Devices
+
+1.  Temporary mount directory for removable devices.
+
+2.  For examples, `/media/cdrom` for CD-ROM; `/media/floppy` for floppy drives; `/media/cdrecorder` for CD writer.
+
+#### `/srv` : Service Data
+
+1.  `srv` stands for service.
+2.  Contains server specific services related data.
+3.  For example, `/srv/cvs` contains CVS related data.
+
+
+
+# Basic Linux Commands
 
