@@ -167,52 +167,62 @@ systemctl list-unit-files						# list services init files
 
 # The Bash
 
-1.  Bash Environment variables
+1.  #### Bash Environment variables
+    
     1.  `$PATH`​
     2.  `$USER`
     3.  `$PWD`​
     4.  `$HOME`
     5.  `$$`
-2.  `history`
+2.  #### `history`
+    
     1.  `!1`
     2.  `!!`
     3.  `ctrl + R`
-3.  I/O Redirection
+3.  #### I/O Redirection
+    
     1.  `|`
     2.  `>`
     3.  `<`
     4.  `STDIN = 0`
     5.  `STDOUT = 1`
     6.  `STDERR = 2`
-4.  Text Manipulation
+4.  #### Text Manipulation
+    
     1.  `grep`
     2.  `sed`
     3.  `cut`
     4.  `awk`
-5.  File Editors
+5.  #### File Editors
+    
     1.  `nano`
     2.  `vi`
-6.  Comparing Files
+6.  #### Comparing Files
+    
     1.  `comm`
     2.  `diff`
         1.  `diff -c <file1> <file2>`
         2.  `diff -u <file1> <file2>`
-    3.  `vimdiff`
+    3.  #### `vimdiff`
+        
         1.  `do` - get changes from other window to current window
         2.  `dp` - puts changes from current window to other one
         3.  `]c` - jump to next change
         4.  `[c` - jumps to previous change
         5.  `ctrl + W ` - switch split window
-7.  Process Management
+7.  #### Process Management
+    
     1.  `bg`
     2.  `jobs`
     3.  `fg`
     4.  `ps`
     5.  `kill`
-8.  File Monitoring
+8.  #### File Monitoring
+    
     1.  `tail`
     2.  `watch`
-9.  Downloading Files
+9.  #### Downloading Files
+    
     1.  `wget`
     2.  `curl`
         1.  `curl -o <outputfile> <url>`
@@ -220,11 +230,12 @@ systemctl list-unit-files						# list services init files
         1.  `-n <number of multiple connections>`
         2.   `-o <output file>`
         3.  `-a ` - to show more concise process indicator
-10.  Customising Bash
-     1.  History Customisation
+10.  #### Customising Bash
+     
+     1.  **History Customisation**
          1.  `export HISTCONTROL=ignoredups` - ignore duplicate commands from history
          2.  `export HISTIGNORE="&:ls:[bf]g:exit:history"` - ignore common commands
          3.  `export HISTTIMEFORMAT='%F %T '` - Time format in history command
-     2.  Alias
+     2.  **Alias**
          1.  `alias <alias>='<command>'`
          2.  `unalias`
