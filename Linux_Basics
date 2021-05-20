@@ -109,7 +109,7 @@
 2.  Contains server specific services related data.
 3.  For example, `/srv/cvs` contains CVS related data.
 
-
+------
 
 # Basic Linux Commands
 
@@ -141,7 +141,7 @@
 
 12.  `find` - Search a file through recursive search
 
-
+------
 
 # Managing Linux Basic Services
 
@@ -164,6 +164,8 @@ sudo ss -antlp | grep apache 					# To check if http Apache is running
 ```bash
 systemctl list-unit-files						# list services init files
 ```
+
+------
 
 # The Bash
 
@@ -239,3 +241,5 @@ systemctl list-unit-files						# list services init files
      2.  **Alias**
          1.  `alias <alias>='<command>'`
          2.  `unalias`
+
+------
